@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de privacidad | Mookie Charm</title>
+  <link rel="icon" type="image/png" href="fotos de la parte principal/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scroll-brand-bar">
+    <a class="brand-title" href="index.html" aria-label="Ir al inicio">
+      <img class="brand-logo-mark" src="fotos de la parte principal/logo.jpg" alt="">
+      <span>Mookie Charm</span>
+    </a>
+    <div class="brand-socials" aria-label="Redes sociales">
+      <a href="https://www.facebook.com/share/p/1GnCS7FKeV/" aria-label="Facebook">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M13.7 21v-8h2.8l.4-3h-3.2V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.7-.1-1.4-.2-2.2-.2-2.2 0-3.8 1.4-3.8 3.9V10H8.5v3H11v8h2.7Z"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/5217711989704" aria-label="WhatsApp">
+        <svg aria-hidden="true" viewBox="0 0 32 32">
+          <path d="M16.02 3.2c-7.02 0-12.72 5.7-12.72 12.72 0 2.35.64 4.54 1.76 6.42l-1.78 6.5 6.68-1.75a12.6 12.6 0 0 0 6.06 1.54c7.02 0 12.72-5.7 12.72-12.72S23.04 3.2 16.02 3.2Zm0 23.26c-1.96 0-3.78-.54-5.36-1.48l-.38-.23-3.96 1.04 1.06-3.86-.25-.4a10.45 10.45 0 0 1-1.66-5.61c0-5.83 4.73-10.56 10.56-10.56s10.56 4.73 10.56 10.56-4.74 10.54-10.57 10.54Zm5.8-7.9c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.31-.81 1.03-.99 1.24-.18.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.19-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.71-.98-2.35-.26-.62-.52-.53-.71-.54h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64 0 1.56 1.14 3.07 1.3 3.28.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.29-.21-.61-.37Z"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/mookiecharm?igsh=eWw3ZDB4d2VwajE=" aria-label="Instagram">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M7.4 2h9.2A5.4 5.4 0 0 1 22 7.4v9.2a5.4 5.4 0 0 1-5.4 5.4H7.4A5.4 5.4 0 0 1 2 16.6V7.4A5.4 5.4 0 0 1 7.4 2Zm-.2 2A3.2 3.2 0 0 0 4 7.2v9.6A3.2 3.2 0 0 0 7.2 20h9.6a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.8 4H7.2Zm10.3 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <button class="cart-toggle" type="button" aria-controls="orderCart" aria-expanded="false" aria-label="Abrir carrito">
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M7 7h12.2l-1.45 7.2H8.55L7 4.8H4.8"/>
+      <circle cx="9.8" cy="18.4" r="1.25"/>
+      <circle cx="16.9" cy="18.4" r="1.25"/>
+    </svg>
+    <span class="cart-count" aria-live="polite">0</span>
+  </button>
+
+  <aside class="order-cart" id="orderCart" aria-hidden="true" aria-label="Carrito de pedido">
+    <div class="cart-panel">
+      <div class="cart-header">
+        <div>
+          <p>Tu pedido</p>
+          <h2>Carrito</h2>
+        </div>
+        <button class="cart-close" type="button" aria-label="Cerrar carrito">&times;</button>
+      </div>
+
+      <div class="cart-items" aria-live="polite">
+        <a class="cart-empty" href="index.html#sabores">Agregar galletas</a>
+      </div>
+
+      <form class="cart-form">
+        <label>
+          Nombre
+          <input type="text" name="customerName" autocomplete="name" placeholder="Tu nombre" required>
+        </label>
+        <label>
+          Fecha de entrega
+          <div class="date-selects" aria-describedby="deliveryDateError">
+            <select name="deliveryDay" aria-label="D&iacute;a de entrega" required>
+              <option value="">D&iacute;a</option>
+            </select>
+            <select name="deliveryMonth" aria-label="Mes de entrega" required>
+              <option value="">Mes</option>
+            </select>
+            <select name="deliveryYear" aria-label="A&ntilde;o de entrega" required>
+              <option value="">A&ntilde;o</option>
+            </select>
+          </div>
+          <input type="hidden" name="deliveryTime" required>
+          <span class="cart-field-error" id="deliveryDateError" aria-live="polite"></span>
+        </label>
+        <label>
+          Detalles del pedido
+          <textarea name="orderNotes" rows="3" placeholder="Empaque, direcci&oacute;n o alg&uacute;n detalle especial" required></textarea>
+        </label>
+      </form>
+
+      <div class="cart-reminder">
+        <h3>Recuerda</h3>
+        <p class="cart-lead-time">Realiza tu orden con por lo menos 2 d&iacute;as de anticipaci&oacute;n.</p>
+        <p class="cart-advance-payment">Para que tu pedido sea tomado en cuenta tendr&aacute;s que anticipar el 50% del precio total de tu compra.</p>
+        <p class="cart-production-time">Los tiempos de producci&oacute;n por galleta pueden variar.</p>
+      </div>
+
+      <p class="availability-hint">Agrega una fecha para continuar.</p>
+      <button class="verify-availability" type="button" disabled>Verificar disponibilidad</button>
+      <button class="cart-whatsapp" type="button" disabled>Continuar orden en WhatsApp</button>
+    </div>
+  </aside>
+
+  <button class="menu-toggle" type="button" aria-controls="sideMenu" aria-expanded="false">
+    <span class="menu-orbit" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <span class="menu-label">Menu</span>
+  </button>
+
+  <div class="about-marquee" aria-hidden="true">
+    <span>Galletas que cuentan historias</span>
+    <span>Hechas para romper lo ordinario</span>
+    <span>Ingredientes naturales, sabores inolvidables</span>
+  </div>
+
+  <nav class="side-menu" id="sideMenu" aria-label="Men&uacute; principal" aria-hidden="true">
+    <div class="menu-topline">
+      <a class="menu-brand" href="index.html">Mookie Charm</a>
+      <button class="close-menu" type="button" aria-label="Cerrar men&uacute;">
+        <span>Cerrar</span>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="menu-stage">
+      <div class="menu-links">
+        <a href="index.html">
+          <span class="menu-number">01</span>
+          <span class="menu-link-title">Inicio</span>
+          <svg class="menu-link-illustration menu-home-icon" aria-hidden="true" viewBox="0 0 100 100"><path d="M15 47 50 17l35 30M24 43v39h52V43M41 82V59h18v23"/><path d="M68 25v-9h10v18"/></svg>
+        </a>
+        <a href="nosotros.html">
+          <span class="menu-number">02</span>
+          <span class="menu-link-title">Nosotros</span>
+          <svg class="menu-link-illustration menu-bowl-icon" aria-hidden="true" viewBox="0 0 100 100"><path d="M18 49h64c-2 25-15 35-32 35S20 74 18 49Z"/><path d="M25 56c15 7 35 7 50 0M63 47 78 15M70 17l13 6"/><path class="menu-stir-line" d="M38 39c8-7 21-7 29 0"/></svg>
+        </a>
+        <a href="catering.html">
+          <span class="menu-number">03</span>
+          <span class="menu-link-title">Pedidos especiales</span>
+          <svg class="menu-link-illustration menu-gift-icon" aria-hidden="true" viewBox="0 0 100 100"><g class="menu-cookie-base"><circle cx="43" cy="64" r="22"/><circle cx="34" cy="57" r="2.2"/><circle cx="50" cy="54" r="2.2"/><circle cx="54" cy="70" r="2.2"/><circle cx="38" cy="73" r="2.2"/></g><g class="menu-piping-bag"><path d="M52 21 82 34 64 55 41 41Z"/><path d="m64 55-7 8-6-13"/><path d="M60 26 48 39M72 31 58 47"/></g><g class="menu-sprinkles"><path d="M67 62h5M61 72l4 3M76 50l4-3M70 75l5-1"/></g></svg>
+        </a>
+        <a class="menu-coverage-link" href="index.html#cobertura-alcance">
+          <span class="menu-number">04</span>
+          <span class="menu-link-title">Cobertura y alcance</span>
+          <svg class="menu-link-illustration menu-map-icon" aria-hidden="true" viewBox="0 0 100 100"><path class="menu-map-paper" d="M15 23 38 15l24 8 23-8v62l-23 8-24-8-23 8Z"/><path class="menu-map-fold" d="M38 15v62M62 23v62"/><path class="menu-map-route" d="M25 65c10-21 22-6 31-25 6-12 15-13 22-5"/><g class="menu-map-pin"><path d="M71 24c7 0 12 5 12 12 0 9-12 21-12 21S59 45 59 36c0-7 5-12 12-12Z"/><circle cx="71" cy="36" r="4"/></g></svg>
+        </a>
+      </div>
+    </div>
+    <div class="menu-crumbs" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
