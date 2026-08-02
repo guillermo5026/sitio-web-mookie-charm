@@ -45,20 +45,39 @@
 
       <form class="cart-form">
         <label>
-          Nombre
+          <span class="field-label">Nombre <span class="required-note">(obligatorio)</span></span>
           <input type="text" name="customerName" autocomplete="name" placeholder="Tu nombre" required>
         </label>
         <label>
-          Fecha o momento de entrega
-          <input type="text" name="deliveryTime" placeholder="Ej. Viernes por la tarde">
+          Fecha de entrega
+          <div class="date-selects" aria-describedby="deliveryDateError">
+            <select name="deliveryDay" aria-label="D&iacute;a de entrega" required>
+              <option value="">D&iacute;a</option>
+            </select>
+            <select name="deliveryMonth" aria-label="Mes de entrega" required>
+              <option value="">Mes</option>
+            </select>
+            <select name="deliveryYear" aria-label="A&ntilde;o de entrega" required>
+              <option value="">A&ntilde;o</option>
+            </select>
+          </div>
+          <input type="hidden" name="deliveryTime" required>
+          <span class="cart-field-error" id="deliveryDateError" aria-live="polite"></span>
         </label>
         <label>
-          Detalles del pedido
+          <span class="field-label">Detalles del pedido <span class="optional-note">(opcional)</span></span>
           <textarea name="orderNotes" rows="3" placeholder="Empaque, direcci&oacute;n o alg&uacute;n detalle especial"></textarea>
         </label>
       </form>
 
-      <button class="cart-whatsapp" type="button">Continuar orden en WhatsApp</button>
+      <div class="cart-reminder">
+        <h3>Recuerda</h3>
+        <p class="cart-lead-time">Realiza tu orden con por lo menos 2 d&iacute;as de anticipaci&oacute;n.</p>
+        <p class="cart-advance-payment">Para que tu pedido sea tomado en cuenta tendr&aacute;s que anticipar el 50% del precio total de tu compra.</p>
+        <p class="cart-production-time">Los tiempos de producci&oacute;n por galleta pueden variar.</p>
+      </div>
+
+      <button class="cart-whatsapp" type="button" disabled>Continuar orden en WhatsApp</button>
     </div>
   </aside>
 

@@ -57,7 +57,7 @@
 
       <form class="cart-form">
         <label>
-          Nombre
+          <span class="field-label">Nombre <span class="required-note">(obligatorio)</span></span>
           <input type="text" name="customerName" autocomplete="name" placeholder="Tu nombre" required>
         </label>
         <label>
@@ -77,8 +77,8 @@
           <span class="cart-field-error" id="deliveryDateError" aria-live="polite"></span>
         </label>
         <label>
-          Detalles del pedido
-          <textarea name="orderNotes" rows="3" placeholder="Empaque, direcci&oacute;n o alg&uacute;n detalle especial" required></textarea>
+          <span class="field-label">Detalles del pedido <span class="optional-note">(opcional)</span></span>
+          <textarea name="orderNotes" rows="3" placeholder="Empaque, direcci&oacute;n o alg&uacute;n detalle especial"></textarea>
         </label>
       </form>
 
@@ -89,8 +89,6 @@
         <p class="cart-production-time">Los tiempos de producci&oacute;n por galleta pueden variar.</p>
       </div>
 
-      <p class="availability-hint">Agrega una fecha para continuar.</p>
-      <button class="verify-availability" type="button" disabled>Verificar disponibilidad</button>
       <button class="cart-whatsapp" type="button" disabled>Continuar orden en WhatsApp</button>
     </div>
   </aside>

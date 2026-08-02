@@ -30,11 +30,9 @@ const deliveryDaySelect = document.querySelector('[name="deliveryDay"]');
 const deliveryMonthSelect = document.querySelector('[name="deliveryMonth"]');
 const deliveryYearSelect = document.querySelector('[name="deliveryYear"]');
 const deliveryDateError = document.querySelector("#deliveryDateError");
-const verifyAvailabilityButton = document.querySelector(".verify-availability");
 const cartWhatsapp = document.querySelector(".cart-whatsapp");
 const collageCookieMark = document.querySelector(".collage-logo");
 let productCarouselOpenScrollY = null;
-let verifiedDeliveryDate = "";
 const cart = new Map();
 const cartStorageKey = "mookieCharmCart";
 const whatsappOrderUrl = "https://wa.me/5217711989704";
@@ -331,25 +329,6 @@ function buildWhatsappMessage() {
   return `Hola, soy ${name}. Quiero continuar mi orden en Mookie Charm.\n\nPedido:\n${orderLines}\n\nDatos:\n${details}`;
 }
 
-function buildAvailabilityMessage() {
-  updateDeliveryDateValue();
-  const deliveryTime = deliveryDateInput?.value || "";
-  return `Hola, quiero preguntar si tienen disponibilidad para el dia ${deliveryTime}.`;
-}
-
-function verifyAvailabilityOnWhatsapp() {
-  updateDeliveryDateValue();
-  if (!deliveryDateInput?.value) {
-    validateDeliveryDate(true);
-    return;
-  }
-
-  verifiedDeliveryDate = deliveryDateInput.value;
-  const message = encodeURIComponent(buildAvailabilityMessage());
-  window.open(`${whatsappOrderUrl}?text=${message}`, "_blank", "noopener");
-  updateCartWhatsappState();
-}
-
 function continueOrderOnWhatsapp() {
   if (!cartForm || !cartWhatsapp) return;
   if (!cart.size) {
@@ -359,10 +338,6 @@ function continueOrderOnWhatsapp() {
   }
   validateDeliveryDate(true);
   if (!cartForm.reportValidity()) return;
-  if (verifiedDeliveryDate !== deliveryDateInput?.value) {
-    verifyAvailabilityButton?.focus();
-    return;
-  }
 
   const message = encodeURIComponent(buildWhatsappMessage());
   window.open(`${whatsappOrderUrl}?text=${message}`, "_blank", "noopener");
@@ -411,14 +386,7 @@ function validateDeliveryDate(showIncomplete = false) {
 function updateCartWhatsappState() {
   if (!cartWhatsapp || !cartForm) return;
   validateDeliveryDate(false);
-  const selectedDeliveryDate = deliveryDateInput?.value || "";
-  const isAvailabilityVerified = Boolean(selectedDeliveryDate) && verifiedDeliveryDate === selectedDeliveryDate;
-  if (verifyAvailabilityButton) {
-    verifyAvailabilityButton.disabled = !selectedDeliveryDate;
-    verifyAvailabilityButton.classList.toggle("is-verified", isAvailabilityVerified);
-    verifyAvailabilityButton.textContent = isAvailabilityVerified ? "Disponibilidad verificada" : "Verificar disponibilidad";
-  }
-  cartWhatsapp.disabled = !cart.size || !cartForm.checkValidity() || !isAvailabilityVerified;
+  cartWhatsapp.disabled = !cart.size || !cartForm.checkValidity();
 }
 
 function scrollProducts(direction) {
@@ -582,7 +550,6 @@ cartItems?.addEventListener("change", (event) => {
 });
 
 cartWhatsapp?.addEventListener("click", continueOrderOnWhatsapp);
-verifyAvailabilityButton?.addEventListener("click", verifyAvailabilityOnWhatsapp);
 cartForm?.addEventListener("input", updateCartWhatsappState);
 cartForm?.addEventListener("change", updateCartWhatsappState);
 deliveryDaySelect?.addEventListener("change", updateCartWhatsappState);
