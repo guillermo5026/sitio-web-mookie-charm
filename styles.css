@@ -4241,3 +4241,17 @@ figcaption,
     flex-basis: min(88vw, 19.5rem);
   }
 }
+
+/* Ajustes finales mobile */
+@media (max-width: 760px) {
+  .menu-toggle {
+    top: calc(0.7rem + env(safe-area-inset-top, 0px));
+    left: 0.85rem;
+  }
+
+  .special-orders-content,
+  .packages-content {
+    top: 48%;
+    padding-inline: 1.15rem;
+  }
+}
